@@ -8,7 +8,7 @@ in the top right corner -->
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>mitiq.cdr.clifford_training_data &#8212; Mitiq 0.13.0dev documentation</title>
+    <title>mitiq.cdr.clifford_training_data &#8212; Mitiq 0.14.0dev documentation</title>
     
     <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -484,7 +484,8 @@ in the top right corner -->
     <span class="k">return</span> <span class="p">[</span>
         <span class="n">cirq</span><span class="o">.</span><span class="n">ops</span><span class="o">.</span><span class="n">rz</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="o">*</span><span class="n">q</span><span class="p">)</span>
         <span class="k">for</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span>
-            <span class="n">clifford_angles</span><span class="p">,</span> <span class="p">[</span><span class="n">op</span><span class="o">.</span><span class="n">qubits</span> <span class="k">for</span> <span class="n">op</span> <span class="ow">in</span> <span class="n">non_clifford_ops</span><span class="p">],</span>
+            <span class="n">clifford_angles</span><span class="p">,</span>
+            <span class="p">[</span><span class="n">op</span><span class="o">.</span><span class="n">qubits</span> <span class="k">for</span> <span class="n">op</span> <span class="ow">in</span> <span class="n">non_clifford_ops</span><span class="p">],</span>
         <span class="p">)</span>
     <span class="p">]</span>
 
@@ -527,7 +528,10 @@ in the top right corner -->
 
 
 <span class="nd">@np</span><span class="o">.</span><span class="n">vectorize</span>
-<span class="k">def</span> <span class="nf">_is_clifford_angle</span><span class="p">(</span><span class="n">angles</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">tol</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">**</span> <span class="o">-</span><span class="mi">5</span><span class="p">,)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="k">def</span> <span class="nf">_is_clifford_angle</span><span class="p">(</span>
+    <span class="n">angles</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">tol</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**-</span><span class="mi">5</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Function to check if a given angle is Clifford.</span>
 
 <span class="sd">    Args:</span>
@@ -559,7 +563,7 @@ in the top right corner -->
     <span class="k">for</span> <span class="n">exponent</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">exponent</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">exponent</span> <span class="o">=</span> <span class="mi">4</span>
-        <span class="n">diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">rz_matrix</span> <span class="o">-</span> <span class="n">s_matrix</span> <span class="o">**</span> <span class="n">exponent</span><span class="p">)</span>
+        <span class="n">diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">rz_matrix</span> <span class="o">-</span> <span class="n">s_matrix</span><span class="o">**</span><span class="n">exponent</span><span class="p">)</span>
         <span class="n">dists</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">((</span><span class="n">diff</span> <span class="o">/</span> <span class="n">sigma</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)))</span>
     <span class="k">return</span> <span class="n">dists</span>
 
@@ -583,7 +587,9 @@ in the top right corner -->
 
 <span class="nd">@np</span><span class="o">.</span><span class="n">vectorize</span>
 <span class="k">def</span> <span class="nf">_probabilistic_angle_to_clifford</span><span class="p">(</span>
-    <span class="n">angles</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">sigma</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">random_state</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">RandomState</span><span class="p">,</span>
+    <span class="n">angles</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">sigma</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+    <span class="n">random_state</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">RandomState</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Returns a Clifford angle sampled from the distribution</span>
 

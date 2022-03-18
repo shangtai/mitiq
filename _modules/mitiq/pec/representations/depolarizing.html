@@ -8,7 +8,7 @@ in the top right corner -->
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>mitiq.pec.representations.depolarizing &#8212; Mitiq 0.13.0dev documentation</title>
+    <title>mitiq.pec.representations.depolarizing &#8212; Mitiq 0.14.0dev documentation</title>
     
     <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -380,7 +380,8 @@ in the top right corner -->
 
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">qubits</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">represent_operation_with_global_depolarizing_noise</span><span class="p">(</span>
-            <span class="n">ideal_operation</span><span class="p">,</span> <span class="n">noise_level</span><span class="p">,</span>
+            <span class="n">ideal_operation</span><span class="p">,</span>
+            <span class="n">noise_level</span><span class="p">,</span>
         <span class="p">)</span>
 
     <span class="c1"># The two-qubit case: tensor product of two depolarizing channels.</span>
@@ -464,7 +465,8 @@ in the top right corner -->
             <span class="k">continue</span>
         <span class="n">representations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
             <span class="n">represent_operation_with_global_depolarizing_noise</span><span class="p">(</span>
-                <span class="n">Circuit</span><span class="p">(</span><span class="n">op</span><span class="p">),</span> <span class="n">noise_level</span><span class="p">,</span>
+                <span class="n">Circuit</span><span class="p">(</span><span class="n">op</span><span class="p">),</span>
+                <span class="n">noise_level</span><span class="p">,</span>
             <span class="p">)</span>
         <span class="p">)</span>
     <span class="k">return</span> <span class="n">representations</span></div>
@@ -509,14 +511,16 @@ in the top right corner -->
             <span class="k">continue</span>
         <span class="n">representations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
             <span class="n">represent_operation_with_local_depolarizing_noise</span><span class="p">(</span>
-                <span class="n">Circuit</span><span class="p">(</span><span class="n">op</span><span class="p">),</span> <span class="n">noise_level</span><span class="p">,</span>
+                <span class="n">Circuit</span><span class="p">(</span><span class="n">op</span><span class="p">),</span>
+                <span class="n">noise_level</span><span class="p">,</span>
             <span class="p">)</span>
         <span class="p">)</span>
     <span class="k">return</span> <span class="n">representations</span></div>
 
 
 <div class="viewcode-block" id="global_depolarizing_kraus"><a class="viewcode-back" href="../../../../apidoc.html#mitiq.pec.representations.depolarizing.global_depolarizing_kraus">[docs]</a><span class="k">def</span> <span class="nf">global_depolarizing_kraus</span><span class="p">(</span>
-    <span class="n">noise_level</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">num_qubits</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">noise_level</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+    <span class="n">num_qubits</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
     <span class="sd">&quot;&quot;&quot;Returns the kraus operators of a global depolarizing channel at a</span>
 <span class="sd">    given noise level.</span>
@@ -526,7 +530,8 @@ in the top right corner -->
 
 
 <div class="viewcode-block" id="local_depolarizing_kraus"><a class="viewcode-back" href="../../../../apidoc.html#mitiq.pec.representations.depolarizing.local_depolarizing_kraus">[docs]</a><span class="k">def</span> <span class="nf">local_depolarizing_kraus</span><span class="p">(</span>
-    <span class="n">noise_level</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">num_qubits</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">noise_level</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+    <span class="n">num_qubits</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]:</span>
     <span class="sd">&quot;&quot;&quot;Returns the kraus operators of the tensor product of local</span>
 <span class="sd">    depolarizing channels acting on each qubit.</span>

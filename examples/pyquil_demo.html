@@ -8,7 +8,7 @@ in the top right corner -->
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zero Noise Extrapolation with pyQuil and parametric compilation &#8212; Mitiq 0.13.0dev documentation</title>
+    <title>Zero Noise Extrapolation with pyQuil and parametric compilation &#8212; Mitiq 0.14.0dev documentation</title>
     
     <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -255,7 +255,7 @@ in the top right corner -->
                 
   <div class="section" id="zero-noise-extrapolation-with-pyquil-and-parametric-compilation">
 <span id="examples-pyquil-demo"></span><h1>Zero Noise Extrapolation with pyQuil and parametric compilation<a class="headerlink" href="#zero-noise-extrapolation-with-pyquil-and-parametric-compilation" title="Permalink to this headline">¶</a></h1>
-<p>In this example we demonstrate how to use Zero Noise Extrapolation (ZNE) in Mitiq with a parametrically compiled program in pyQuil. Parametric compilation saves time by compiling the program ansatz once, instead of compiling each time the parameters are updated. In pyQuil 2.28.1, a <code class="docutils literal notranslate"><span class="pre">memory_map</span></code> argument is used to substitute in values for previously-declared Quil variables in the pre-compiled executable.</p>
+<p>In this example we demonstrate how to use Zero Noise Extrapolation (ZNE) in Mitiq with a parametrically compiled program in pyQuil. Parametric compilation saves time by compiling the program ansatz once, instead of compiling each time the parameters are updated. In pyQuil, a <code class="docutils literal notranslate"><span class="pre">memory_map</span></code> argument is used to substitute in values for previously-declared Quil variables in the pre-compiled executable.</p>
 <p>When adding the noise mitigation function <code class="docutils literal notranslate"><span class="pre">zne.execute_with_zne</span></code> the <code class="docutils literal notranslate"><span class="pre">memory_map</span></code> is still passed to the executor function and the circuit parameters are updated without the need for repeated compilation.</p>
 <p>The example shown here is adapted from the <a class="reference external" href="https://pyquil-docs.rigetti.com/en/v2.28.1/migration3-declare.html">pyQuil parametric compilation tutorial</a>.</p>
 <div class="cell docutils container">
@@ -307,7 +307,7 @@ resulting from running the quantum program.</p>
         <span class="n">executable</span><span class="o">.</span><span class="n">write_memory</span><span class="p">(</span><span class="n">region_name</span><span class="o">=</span><span class="s2">&quot;theta&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">theta</span><span class="p">)</span>
     <span class="p">)</span><span class="o">.</span><span class="n">readout_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;ro&quot;</span><span class="p">)</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">bitstrings</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
-    <span class="k">return</span> <span class="o">-</span><span class="n">result</span>
+    <span class="k">return</span> <span class="n">result</span>
 </pre></div>
 </div>
 </div>
@@ -321,7 +321,7 @@ resulting from running the quantum program.</p>
 <span class="n">thetas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">21</span><span class="p">)</span>
 <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">theta</span> <span class="ow">in</span> <span class="n">thetas</span><span class="p">:</span>
-    <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span> <span class="o">*</span> <span class="n">expectation</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">quil_prog</span><span class="p">))</span>
+    <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">expectation</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">quil_prog</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -354,13 +354,13 @@ resulting from running the quantum program.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: -0.458
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 0.041
    maxcv: 0.0
  message: &#39;Optimization terminated successfully.&#39;
-    nfev: 20
+    nfev: 18
   status: 1
  success: True
-       x: array([1.59277578])
+       x: array([0.115525])
 </pre></div>
 </div>
 </div>
@@ -375,7 +375,7 @@ resulting from running the quantum program.</p>
 <span class="n">fac</span> <span class="o">=</span> <span class="n">mitiq</span><span class="o">.</span><span class="n">zne</span><span class="o">.</span><span class="n">inference</span><span class="o">.</span><span class="n">LinearFactory</span><span class="p">(</span><span class="n">scale_factors</span><span class="o">=</span><span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">])</span>
 <span class="k">for</span> <span class="n">theta</span> <span class="ow">in</span> <span class="n">thetas</span><span class="p">:</span>
     <span class="n">results_zne</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-        <span class="n">zne</span><span class="o">.</span><span class="n">execute_with_zne</span><span class="p">(</span><span class="n">quil_prog</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="o">-</span><span class="mf">1.0</span> <span class="o">*</span> <span class="n">expectation</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">p</span><span class="p">),</span> <span class="n">factory</span><span class="o">=</span><span class="n">fac</span><span class="p">)</span>
+        <span class="n">zne</span><span class="o">.</span><span class="n">execute_with_zne</span><span class="p">(</span><span class="n">quil_prog</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="n">expectation</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">p</span><span class="p">),</span> <span class="n">factory</span><span class="o">=</span><span class="n">fac</span><span class="p">)</span>
     <span class="p">)</span>
 </pre></div>
 </div>
@@ -411,13 +411,13 @@ resulting from running the quantum program.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: -0.41649999999999987
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     fun: 0.0375
    maxcv: 0.0
  message: &#39;Optimization terminated successfully.&#39;
     nfev: 20
   status: 1
  success: True
-       x: array([1.4204125])
+       x: array([-0.15380625])
 </pre></div>
 </div>
 </div>
@@ -437,7 +437,7 @@ resulting from running the quantum program.</p>
 ==============================================================================
 Authored by: Mitiq team, 2020 &amp; later (https://github.com/unitaryfund/mitiq)
 
-Mitiq Version:	0.13.0dev
+Mitiq Version:	0.14.0dev
 
 Core Dependencies
 -----------------
@@ -449,7 +449,7 @@ Optional Dependencies
 ---------------------
 PyQuil Version:	3.0.1
 Qiskit Version:	0.32.1
-Braket Version:	1.14.0.post0
+Braket Version:	1.17.0
 
 Python Version:	3.8.12
 Platform Info:	Linux (x86_64)

@@ -8,7 +8,7 @@ in the top right corner -->
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Variational Quantum Eigensolver improved with Zero Noise Extrapolation &#8212; Mitiq 0.13.0dev documentation</title>
+    <title>Variational Quantum Eigensolver improved with Zero Noise Extrapolation &#8212; Mitiq 0.14.0dev documentation</title>
     
     <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -361,22 +361,27 @@ where the pyQuil program will run</p>
     <span class="n">num_qubits</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">d</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">**</span> <span class="n">num_qubits</span>
     <span class="n">d_sq</span> <span class="o">=</span> <span class="n">d</span> <span class="o">**</span> <span class="mi">2</span>
+    
     <span class="n">kraus_list</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">prob</span><span class="p">)</span> <span class="o">/</span> <span class="n">d</span><span class="p">]</span> <span class="o">*</span> <span class="n">d</span>
     <span class="n">kraus_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="n">prob</span>
     <span class="n">kraus_ops</span> <span class="o">=</span> <span class="n">pauli_kraus_map</span><span class="p">(</span><span class="n">kraus_list</span><span class="p">)</span>
+    
     <span class="n">k_list</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">prob</span><span class="p">)</span> <span class="o">/</span> <span class="n">d_sq</span><span class="p">]</span> <span class="o">*</span> <span class="n">d_sq</span>
     <span class="n">k_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="n">prob</span>
     <span class="n">k_ops</span> <span class="o">=</span> <span class="n">pauli_kraus_map</span><span class="p">(</span><span class="n">k_list</span><span class="p">)</span>
+    
     <span class="n">T_gate</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">4</span><span class="p">)]])</span>
     <span class="n">CNOT_gate</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">block</span><span class="p">(</span>
         <span class="p">[[</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))],</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="mi">1</span><span class="p">)]]</span>
     <span class="p">)</span>
     <span class="n">S_gate</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="n">j</span><span class="p">]])</span>
     <span class="n">Z_gate</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
+    
     <span class="n">quil_prog</span><span class="o">.</span><span class="n">define_noisy_gate</span><span class="p">(</span><span class="s2">&quot;T&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">append_kraus_to_gate</span><span class="p">(</span><span class="n">kraus_ops</span><span class="p">,</span> <span class="n">T_gate</span><span class="p">))</span>
     <span class="n">quil_prog</span><span class="o">.</span><span class="n">define_noisy_gate</span><span class="p">(</span><span class="s2">&quot;CNOT&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">append_kraus_to_gate</span><span class="p">(</span><span class="n">k_ops</span><span class="p">,</span> <span class="n">CNOT_gate</span><span class="p">))</span>
     <span class="n">quil_prog</span><span class="o">.</span><span class="n">define_noisy_gate</span><span class="p">(</span><span class="s2">&quot;S&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">append_kraus_to_gate</span><span class="p">(</span><span class="n">kraus_ops</span><span class="p">,</span> <span class="n">S_gate</span><span class="p">))</span>
     <span class="n">quil_prog</span><span class="o">.</span><span class="n">define_noisy_gate</span><span class="p">(</span><span class="s2">&quot;Z&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">append_kraus_to_gate</span><span class="p">(</span><span class="n">kraus_ops</span><span class="p">,</span> <span class="n">Z_gate</span><span class="p">))</span>
+    
     <span class="k">return</span> <span class="n">quil_prog</span>
 </pre></div>
 </div>
@@ -409,7 +414,7 @@ where the pyQuil program will run</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pyquil.quil.Program at 0x7f363c43d2b0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pyquil.quil.Program at 0x7fe6f4e65ac0&gt;
 </pre></div>
 </div>
 </div>
@@ -422,7 +427,7 @@ pyQuil custom gates cannot be folded in Mitiq.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">executor</span><span class="p">(</span>
-    <span class="n">thetas</span><span class="p">,</span>
+    <span class="n">theta</span><span class="p">,</span>
     <span class="n">backend</span><span class="p">,</span>
     <span class="n">readout_qubit</span><span class="p">,</span>
     <span class="n">samples</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
@@ -445,7 +450,7 @@ pyQuil custom gates cannot be folded in Mitiq.</p>
         <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">gate</span> <span class="ow">in</span> <span class="n">term</span><span class="p">:</span>
             <span class="n">qubits_to_measure</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
             <span class="n">meas_outcome</span> <span class="o">=</span> <span class="n">expectation_from_sampling</span><span class="p">(</span>
-                <span class="n">thetas</span><span class="p">,</span> <span class="n">noisy</span><span class="p">,</span> <span class="n">qubits_to_measure</span><span class="p">,</span> <span class="n">backend</span><span class="p">,</span> <span class="n">samples</span>
+                <span class="n">theta</span><span class="p">,</span> <span class="n">noisy</span><span class="p">,</span> <span class="n">qubits_to_measure</span><span class="p">,</span> <span class="n">backend</span><span class="p">,</span> <span class="n">samples</span>
             <span class="p">)</span>
             <span class="n">expectation</span> <span class="o">+=</span> <span class="n">term</span><span class="o">.</span><span class="n">coefficient</span> <span class="o">*</span> <span class="n">meas_outcome</span>
     <span class="k">return</span> <span class="n">expectation</span><span class="o">.</span><span class="n">real</span>
@@ -459,7 +464,7 @@ conventions for defining custom gates.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">expectation_from_sampling</span><span class="p">(</span>
-    <span class="n">thetas</span><span class="p">,</span> <span class="n">executable</span><span class="p">:</span> <span class="n">Program</span><span class="p">,</span> <span class="n">marked_qubits</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">backend</span><span class="p">,</span> <span class="n">samples</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">theta</span><span class="p">,</span> <span class="n">executable</span><span class="p">:</span> <span class="n">Program</span><span class="p">,</span> <span class="n">marked_qubits</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">backend</span><span class="p">,</span> <span class="n">samples</span><span class="p">:</span> <span class="nb">int</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Calculate the expectation value of the Zi operator where i ranges over all </span>
 <span class="sd">    qubits given in marked_qubits.</span>
@@ -531,15 +536,15 @@ ZNE.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> final_simplex: (array([[2.86875   ],
-       [2.86874084]]), array([0.37466667, 0.37933333]))
-           fun: 0.3746666666666667
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> final_simplex: (array([[3.0375    ],
+       [3.03750916]]), array([-0.446     , -0.43733333]))
+           fun: -0.44599999999999995
        message: &#39;Optimization terminated successfully.&#39;
-          nfev: 42
-           nit: 16
+          nfev: 40
+           nit: 15
         status: 0
        success: True
-             x: array([2.86875])
+             x: array([3.0375])
 </pre></div>
 </div>
 </div>
@@ -637,15 +642,15 @@ the optimization loop to have better convergence with ZNE applied.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> final_simplex: (array([[3.18632813],
-       [3.18632813]]), array([0.69433333, 0.70033333]))
-           fun: 0.6943333333333334
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> final_simplex: (array([[3.15058594],
+       [3.15058594]]), array([-0.80933333, -0.806     ]))
+           fun: -0.8093333333333332
        message: &#39;Optimization terminated successfully.&#39;
-          nfev: 108
-           nit: 42
+          nfev: 129
+           nit: 49
         status: 0
        success: True
-             x: array([3.18632813])
+             x: array([3.15058594])
 </pre></div>
 </div>
 </div>
@@ -683,7 +688,7 @@ execution time.</p>
 ==============================================================================
 Authored by: Mitiq team, 2020 &amp; later (https://github.com/unitaryfund/mitiq)
 
-Mitiq Version:	0.13.0dev
+Mitiq Version:	0.14.0dev
 
 Core Dependencies
 -----------------
@@ -695,7 +700,7 @@ Optional Dependencies
 ---------------------
 PyQuil Version:	3.0.1
 Qiskit Version:	0.32.1
-Braket Version:	1.14.0.post0
+Braket Version:	1.17.0
 
 Python Version:	3.8.12
 Platform Info:	Linux (x86_64)

@@ -8,7 +8,7 @@ in the top right corner -->
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>mitiq.observable.observable &#8212; Mitiq 0.13.0dev documentation</title>
+    <title>mitiq.observable.observable &#8212; Mitiq 0.14.0dev documentation</title>
     
     <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -208,7 +208,7 @@ in the top right corner -->
 
 <div class="viewcode-block" id="Observable"><a class="viewcode-back" href="../../../apidoc.html#mitiq.observable.observable.Observable">[docs]</a><span class="k">class</span> <span class="nc">Observable</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;A quantum observable typically used to compute its mitigated expectation</span>
-<span class="sd">     value.</span>
+<span class="sd">    value.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
 
@@ -298,7 +298,7 @@ in the top right corner -->
             <span class="n">qubit_indices</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">qubit_indices</span>
         <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">qubit_indices</span><span class="p">)</span>
 
-        <span class="n">matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="n">n</span><span class="p">,</span> <span class="mi">2</span> <span class="o">**</span> <span class="n">n</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+        <span class="n">matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="n">n</span><span class="p">,</span> <span class="mi">2</span><span class="o">**</span><span class="n">n</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">pauli</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_paulis</span><span class="p">:</span>
             <span class="n">matrix</span> <span class="o">+=</span> <span class="n">pauli</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span>
                 <span class="n">qubit_indices_to_include</span><span class="o">=</span><span class="n">qubit_indices</span>

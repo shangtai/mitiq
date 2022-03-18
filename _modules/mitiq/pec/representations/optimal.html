@@ -8,7 +8,7 @@ in the top right corner -->
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>mitiq.pec.representations.optimal &#8212; Mitiq 0.13.0dev documentation</title>
+    <title>mitiq.pec.representations.optimal &#8212; Mitiq 0.14.0dev documentation</title>
     
     <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -327,7 +327,10 @@ in the top right corner -->
 
     <span class="c1"># Run numerical optimization problem</span>
     <span class="n">quasi_prob_dist</span> <span class="o">=</span> <span class="n">minimize_one_norm</span><span class="p">(</span>
-        <span class="n">ideal_matrix</span><span class="p">,</span> <span class="n">basis_matrices</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="n">tol</span><span class="p">,</span> <span class="n">initial_guess</span><span class="o">=</span><span class="n">initial_guess</span><span class="p">,</span>
+        <span class="n">ideal_matrix</span><span class="p">,</span>
+        <span class="n">basis_matrices</span><span class="p">,</span>
+        <span class="n">tol</span><span class="o">=</span><span class="n">tol</span><span class="p">,</span>
+        <span class="n">initial_guess</span><span class="o">=</span><span class="n">initial_guess</span><span class="p">,</span>
     <span class="p">)</span>
 
     <span class="n">basis_expansion</span> <span class="o">=</span> <span class="p">{</span><span class="n">op</span><span class="p">:</span> <span class="n">eta</span> <span class="k">for</span> <span class="n">op</span><span class="p">,</span> <span class="n">eta</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">basis_set</span><span class="p">,</span> <span class="n">quasi_prob_dist</span><span class="p">)}</span>

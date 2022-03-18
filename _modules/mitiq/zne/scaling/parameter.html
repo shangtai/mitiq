@@ -8,7 +8,7 @@ in the top right corner -->
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>mitiq.zne.scaling.parameter &#8212; Mitiq 0.13.0dev documentation</title>
+    <title>mitiq.zne.scaling.parameter &#8212; Mitiq 0.14.0dev documentation</title>
     
     <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -331,7 +331,7 @@ in the top right corner -->
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">gate</span><span class="p">,</span> <span class="n">EigenGate</span><span class="p">)</span>
                 <span class="n">base_gate</span> <span class="o">=</span> <span class="n">_get_base_gate</span><span class="p">(</span><span class="n">gate</span><span class="p">)</span>
-                <span class="n">param</span> <span class="o">=</span> <span class="n">gate</span><span class="o">.</span><span class="n">exponent</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+                <span class="n">param</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">gate</span><span class="o">.</span><span class="n">exponent</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
                 <span class="n">error</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">noise</span><span class="p">))</span>
                 <span class="n">new_param</span> <span class="o">=</span> <span class="n">param</span> <span class="o">+</span> <span class="n">error</span>
                 <span class="n">curr_moment</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>

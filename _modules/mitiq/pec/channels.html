@@ -8,7 +8,7 @@ in the top right corner -->
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>mitiq.pec.channels &#8212; Mitiq 0.13.0dev documentation</title>
+    <title>mitiq.pec.channels &#8212; Mitiq 0.14.0dev documentation</title>
     
     <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 <link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -309,12 +309,13 @@ in the top right corner -->
 
 
 <span class="k">def</span> <span class="nf">_safe_sqrt</span><span class="p">(</span>
-    <span class="n">perfect_square</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">error_str</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;The input must be a square number.&quot;</span><span class="p">,</span>
+    <span class="n">perfect_square</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">error_str</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;The input must be a square number.&quot;</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Takes the square root of the input integer and</span>
 <span class="sd">    raises an error if the input is not a perfect square.&quot;&quot;&quot;</span>
     <span class="n">square_root</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">perfect_square</span><span class="p">)))</span>
-    <span class="k">if</span> <span class="n">square_root</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">!=</span> <span class="n">perfect_square</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">square_root</span><span class="o">**</span><span class="mi">2</span> <span class="o">!=</span> <span class="n">perfect_square</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">error_str</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">square_root</span>
 
@@ -365,7 +366,7 @@ in the top right corner -->
 
     <span class="n">choi_kl_ij</span> <span class="o">=</span> <span class="n">choi_state</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">dim</span><span class="p">,</span> <span class="n">dim</span><span class="p">,</span> <span class="n">dim</span><span class="p">,</span> <span class="n">dim</span><span class="p">)</span>
     <span class="n">choi_ki_lj</span> <span class="o">=</span> <span class="n">choi_kl_ij</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-    <span class="n">super_not_normalized</span> <span class="o">=</span> <span class="n">choi_ki_lj</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">dim</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span> <span class="n">dim</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">super_not_normalized</span> <span class="o">=</span> <span class="n">choi_ki_lj</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">dim</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">dim</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">dim</span> <span class="o">*</span> <span class="n">super_not_normalized</span></div>
 
 
