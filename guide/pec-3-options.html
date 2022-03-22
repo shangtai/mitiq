@@ -591,7 +591,7 @@ in the basis of the noisy implementable gates (<code class="docutils literal not
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimal representation:
-q_0: ───H─── = -0.091*(q_0: ───H───X───)-0.091*(q_0: ───H───Y───)-0.091*(q_0: ───H───Z───)+1.273*(q_0: ───H───)
+q_0: ───H─── = -0.091*(q_0: ───H───Z───)-0.091*(q_0: ───H───X───)+1.273*(q_0: ───H───)-0.091*(q_0: ───H───Y───)
 </pre></div>
 </div>
 </div>
@@ -684,7 +684,7 @@ The associated coefficient is 1.27273, whose sign is 1.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.5454545145454546
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.545454514545455
 </pre></div>
 </div>
 </div>
@@ -698,7 +698,7 @@ The associated coefficient is 1.27273, whose sign is 1.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-0.09090908909090911, -0.09090908909090833, -0.09090908909090889, 1.2727272472727282)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-0.09090908909090845, -0.090909089090909, 1.2727272472727287, -0.09090908909090878)
 </pre></div>
 </div>
 </div>
@@ -711,7 +711,7 @@ The associated coefficient is 1.27273, whose sign is 1.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.05882353, 0.05882353, 0.05882353, 0.82352941])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.05882353, 0.05882353, 0.82352941, 0.05882353])
 </pre></div>
 </div>
 </div>
@@ -861,26 +861,26 @@ mitigation technique.</p>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>During the previous PEC process, 130  circuits have been executed.
 The first 5 circuits are:
      ┌───┐┌───┐┌───┐┌───┐┌───┐
-q_0: ┤ H ├┤ H ├┤ H ├┤ H ├┤ Y ├
+q_0: ┤ H ├┤ H ├┤ H ├┤ H ├┤ X ├
      └───┘└───┘└───┘└───┘└───┘
      ┌───┐┌───┐┌───┐┌───┐┌───┐
-q_0: ┤ H ├┤ H ├┤ H ├┤ Y ├┤ H ├
+q_0: ┤ H ├┤ H ├┤ H ├┤ X ├┤ H ├
      └───┘└───┘└───┘└───┘└───┘
-     ┌───┐┌───┐┌───┐┌───┐┌───┐┌───┐
-q_0: ┤ H ├┤ H ├┤ Z ├┤ H ├┤ X ├┤ H ├
-     └───┘└───┘└───┘└───┘└───┘└───┘
+     ┌───┐┌───┐┌───┐┌───┐┌───┐
+q_0: ┤ H ├┤ H ├┤ H ├┤ Z ├┤ H ├
+     └───┘└───┘└───┘└───┘└───┘
      ┌───┐┌───┐┌───┐┌───┐
 q_0: ┤ H ├┤ H ├┤ H ├┤ H ├
      └───┘└───┘└───┘└───┘
      ┌───┐┌───┐┌───┐┌───┐┌───┐
-q_0: ┤ H ├┤ H ├┤ H ├┤ H ├┤ X ├
+q_0: ┤ H ├┤ H ├┤ H ├┤ H ├┤ Z ├
      └───┘└───┘└───┘└───┘└───┘
 The corresponding noisy expectation values are:
 0.33615999999999974
+0.6638399999999994
 0.3361599999999998
-0.6310719999999995
 0.7047999999999993
-0.33615999999999974
+0.6638399999999994
 </pre></div>
 </div>
 </div>
@@ -923,11 +923,11 @@ For example, the first 5 unbiased samples are:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-1.9176570667226625,
- -1.917657066722663,
- 3.6000109483900644,
- 4.020599418806914,
- -1.9176570667226625]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-1.9176570667226647,
+ -3.786939157464224,
+ -1.917657066722665,
+ 4.020599418806919,
+ -3.786939157464224]
 </pre></div>
 </div>
 </div>
@@ -942,7 +942,7 @@ the standard deviation of the unbiased samples, i.e., the square root of the mea
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.27400922104487674
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.26721988737534963
 </pre></div>
 </div>
 </div>
