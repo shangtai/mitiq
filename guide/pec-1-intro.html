@@ -426,9 +426,9 @@ identity operation.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ┌───┐┌─────────┐┌────┐┌───────┐┌────┐┌─────────┐
-q_0: ┤ X ├┤ Ry(π/2) ├┤ √X ├┤ Ry(0) ├┤ √X ├┤ Ry(π/2) ├
-     └───┘└─────────┘└────┘└───────┘└────┘└─────────┘
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ┌──────────┐┌────┐┌──────────┐┌──────────┐┌─────────┐┌──────────┐
+q_0: ┤ Ry(-π/2) ├┤ √X ├┤ Ry(-π/2) ├┤ Rx(-π/2) ├┤ Ry(π/2) ├┤ Rx(-π/2) ├
+     └──────────┘└────┘└──────────┘└──────────┘└─────────┘└──────────┘
 </pre></div>
 </div>
 </div>
@@ -527,7 +527,7 @@ numerical optimization problems <span id="id3">[<a class="reference internal" hr
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>q_0: ───X─── = 1.010*(q_0: ───X───)-0.003*(q_0: ───X───X───)-0.003*(q_0: ───X───Y───)-0.003*(q_0: ───X───Z───)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>q_0: ───Ry(0.5π)─── = 1.010*(q_0: ───Ry(0.5π)───)-0.003*(q_0: ───Ry(0.5π)───X───)-0.003*(q_0: ───Ry(0.5π)───Y───)-0.003*(q_0: ───Ry(0.5π)───Z───)
 </pre></div>
 </div>
 </div>
@@ -553,7 +553,7 @@ probabilistic error cancellation can be applied through the <a class="reference 
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error without PEC: 0.03869
-Error with PEC:    0.00107
+Error with PEC:    0.00649
 </pre></div>
 </div>
 </div>
