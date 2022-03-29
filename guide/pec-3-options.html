@@ -540,9 +540,6 @@ channel, the following code cell generates the corresponding <a class="reference
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4 NoisyOperation objects defined.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 </div>
 </div>
 <p><em><strong>Note:</strong></em> <em>A <a class="reference internal" href="../apidoc.html#mitiq.pec.types.types.NoisyOperation" title="mitiq.pec.types.types.NoisyOperation"><code class="xref py py-class docutils literal notranslate"><span class="pre">NoisyOperation</span></code></a> can also be instantiated with <code class="docutils literal notranslate"><span class="pre">channel_matrix=None</span></code>.
@@ -592,7 +589,7 @@ in the basis of the noisy implementable gates (<code class="docutils literal not
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimal representation:
-q_0: ───H─── = -0.091*(q_0: ───H───Y───)-0.091*(q_0: ───H───Z───)-0.091*(q_0: ───H───X───)+1.273*(q_0: ───H───)
+q_0: ───H─── = -0.091*(q_0: ───H───X───)+1.273*(q_0: ───H───)-0.091*(q_0: ───H───Z───)-0.091*(q_0: ───H───Y───)
 </pre></div>
 </div>
 </div>
@@ -669,8 +666,8 @@ should be multiplied by the sign of the associated coefficient <span class="math
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The sampled noisy operation is: q_0: ───H───Y───.
-The associated coefficient is -0.0909091, whose sign is -1.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The sampled noisy operation is: q_0: ───H───.
+The associated coefficient is 1.27273, whose sign is 1.
 </pre></div>
 </div>
 </div>
@@ -685,7 +682,7 @@ The associated coefficient is -0.0909091, whose sign is -1.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.5454545145454557
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.5454545145454555
 </pre></div>
 </div>
 </div>
@@ -699,7 +696,7 @@ The associated coefficient is -0.0909091, whose sign is -1.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-0.09090908909090989, -0.09090908909091011, -0.09090908909090967, 1.272727247272726)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-0.09090908909090978, 1.272727247272726, -0.09090908909091022, -0.09090908909090978)
 </pre></div>
 </div>
 </div>
@@ -712,7 +709,7 @@ The associated coefficient is -0.0909091, whose sign is -1.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.05882353, 0.05882353, 0.05882353, 0.82352941])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.05882353, 0.82352941, 0.05882353, 0.05882353])
 </pre></div>
 </div>
 </div>
@@ -861,26 +858,26 @@ mitigation technique.</p>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>During the previous PEC process, 130  circuits have been executed.
 The first 5 circuits are:
-     ┌───┐┌───┐┌───┐┌───┐┌───┐
-q_0: ┤ H ├┤ H ├┤ H ├┤ H ├┤ Z ├
-     └───┘└───┘└───┘└───┘└───┘
-     ┌───┐┌───┐┌───┐┌───┐┌───┐
-q_0: ┤ H ├┤ H ├┤ H ├┤ Z ├┤ H ├
-     └───┘└───┘└───┘└───┘└───┘
-     ┌───┐┌───┐┌───┐┌───┐┌───┐┌───┐
-q_0: ┤ H ├┤ H ├┤ X ├┤ H ├┤ Y ├┤ H ├
-     └───┘└───┘└───┘└───┘└───┘└───┘
+     ┌───┐┌───┐┌───┐┌───┐
+q_0: ┤ H ├┤ H ├┤ H ├┤ H ├
+     └───┘└───┘└───┘└───┘
      ┌───┐┌───┐┌───┐┌───┐
 q_0: ┤ H ├┤ H ├┤ H ├┤ H ├
      └───┘└───┘└───┘└───┘
      ┌───┐┌───┐┌───┐┌───┐┌───┐
-q_0: ┤ H ├┤ H ├┤ H ├┤ H ├┤ Y ├
+q_0: ┤ H ├┤ H ├┤ H ├┤ X ├┤ H ├
+     └───┘└───┘└───┘└───┘└───┘
+     ┌───┐┌───┐┌───┐┌───┐┌───┐
+q_0: ┤ H ├┤ H ├┤ H ├┤ Z ├┤ H ├
+     └───┘└───┘└───┘└───┘└───┘
+     ┌───┐┌───┐┌───┐┌───┐┌───┐
+q_0: ┤ H ├┤ H ├┤ H ├┤ H ├┤ X ├
      └───┘└───┘└───┘└───┘└───┘
 The corresponding noisy expectation values are:
+0.7047999999999993
+0.7047999999999993
 0.6638399999999994
 0.3361599999999998
-0.6310719999999994
-0.7047999999999993
 0.33615999999999974
 </pre></div>
 </div>
@@ -924,11 +921,11 @@ For example, the first 5 unbiased samples are:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-3.786939157464231,
- -1.9176570667226682,
- 3.600010948390074,
- 4.020599418806926,
- -1.917657066722668]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4.020599418806923,
+ 4.020599418806923,
+ -3.786939157464228,
+ -1.9176570667226671,
+ -1.9176570667226667]
 </pre></div>
 </div>
 </div>
@@ -943,7 +940,7 @@ the standard deviation of the unbiased samples, i.e., the square root of the mea
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.28360768379108425
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2733203798182113
 </pre></div>
 </div>
 </div>
