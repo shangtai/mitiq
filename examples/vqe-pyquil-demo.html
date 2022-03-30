@@ -412,7 +412,7 @@ where the pyQuil program will run</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pyquil.quil.Program at 0x7f10dcc99ee0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pyquil.quil.Program at 0x7f20f4c9ba60&gt;
 </pre></div>
 </div>
 </div>
@@ -534,15 +534,15 @@ ZNE.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> final_simplex: (array([[3.1640625 ],
-       [3.16406708]]), array([-0.444     , -0.43533333]))
-           fun: -0.44399999999999995
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> final_simplex: (array([[3.09374542],
+       [3.09374542]]), array([-0.456, -0.448]))
+           fun: -0.45599999999999996
        message: &#39;Optimization terminated successfully.&#39;
-          nfev: 51
-           nit: 20
+          nfev: 81
+           nit: 31
         status: 0
        success: True
-             x: array([3.1640625])
+             x: array([3.09374542])
 </pre></div>
 </div>
 </div>
@@ -640,15 +640,15 @@ the optimization loop to have better convergence with ZNE applied.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> final_simplex: (array([[3.00029297],
-       [3.        ]]), array([-0.79533333, -0.78933333]))
-           fun: -0.7953333333333336
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> final_simplex: (array([[3.2953125 ],
+       [3.29501953]]), array([-0.798     , -0.78833333]))
+           fun: -0.798
        message: &#39;Optimization terminated successfully.&#39;
-          nfev: 25
-           nit: 10
+          nfev: 29
+           nit: 11
         status: 0
        success: True
-             x: array([3.00029297])
+             x: array([3.2953125])
 </pre></div>
 </div>
 </div>
@@ -697,11 +697,15 @@ SciPy Version:	1.7.3
 Optional Dependencies
 ---------------------
 PyQuil Version:	3.0.1
-Qiskit Version:	0.34.2
+Qiskit Version:	0.32.1
 Braket Version:	1.17.0
 
 Python Version:	3.8.12
 Platform Info:	Linux (x86_64)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/qiskit/aqua/__init__.py:86: DeprecationWarning: The package qiskit.aqua is deprecated. It was moved/refactored to qiskit-terra For more information see &lt;https://github.com/Qiskit/qiskit-aqua/blob/main/README.md#migration-guide&gt;
+  warn_package(&#39;aqua&#39;, &#39;qiskit-terra&#39;)
 </pre></div>
 </div>
 </div>
