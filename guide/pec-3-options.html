@@ -439,7 +439,8 @@ in the top right corner -->
 <p>In the following code we use Qiskit as a frontend, but the workflow is the same for other frontends.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">qiskit</span> <span class="c1"># Frontend library</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">qiskit</span> <span class="c1"># Frontend library</span>
 <span class="kn">from</span> <span class="nn">mitiq</span> <span class="kn">import</span> <span class="n">pec</span>  <span class="c1"># Probabilistic error cancellation module</span>
 </pre></div>
 </div>
@@ -489,18 +490,18 @@ of noisy operations that are useful to represent the Hadamard gate in the presen
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ┌───┐
-q_0: ┤ H ├
-     └───┘
-     ┌───┐┌───┐
-q_0: ┤ H ├┤ X ├
-     └───┘└───┘
-     ┌───┐┌───┐
-q_0: ┤ H ├┤ Y ├
-     └───┘└───┘
-     ┌───┐┌───┐
-q_0: ┤ H ├┤ Z ├
-     └───┘└───┘
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ┌───┐
+q: ┤ H ├
+   └───┘
+   ┌───┐┌───┐
+q: ┤ H ├┤ X ├
+   └───┘└───┘
+   ┌───┐┌───┐
+q: ┤ H ├┤ Y ├
+   └───┘└───┘
+   ┌───┐┌───┐
+q: ┤ H ├┤ Z ├
+   └───┘└───┘
 </pre></div>
 </div>
 </div>
@@ -568,9 +569,9 @@ form of a <code class="docutils literal notranslate"><span class="pre">QPROGRAM<
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The ideal operation to expand in the noisy basis is:
-     ┌───┐
-q_0: ┤ H ├
-     └───┘
+   ┌───┐
+q: ┤ H ├
+   └───┘
 </pre></div>
 </div>
 </div>
@@ -589,7 +590,7 @@ in the basis of the noisy implementable gates (<code class="docutils literal not
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimal representation:
-q_0: ───H─── = -0.091*(q_0: ───H───X───)-0.091*(q_0: ───H───Y───)-0.091*(q_0: ───H───Z───)+1.273*(q_0: ───H───)
+q_0: ───H─── = -0.091*(q_0: ───H───Z───)-0.091*(q_0: ───H───Y───)+1.273*(q_0: ───H───)-0.091*(q_0: ───H───X───)
 </pre></div>
 </div>
 </div>
@@ -682,7 +683,7 @@ The associated coefficient is 1.27273, whose sign is 1.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.5454545145454546
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.545454514545456
 </pre></div>
 </div>
 </div>
@@ -696,7 +697,7 @@ The associated coefficient is 1.27273, whose sign is 1.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-0.09090908909090911, -0.09090908909090833, -0.09090908909090889, 1.2727272472727282)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-0.09090908909090889, -0.09090908909090911, 1.2727272472727287, -0.09090908909090933)
 </pre></div>
 </div>
 </div>
@@ -709,7 +710,7 @@ The associated coefficient is 1.27273, whose sign is 1.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.05882353, 0.05882353, 0.05882353, 0.82352941])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.05882353, 0.05882353, 0.82352941, 0.05882353])
 </pre></div>
 </div>
 </div>
@@ -734,9 +735,9 @@ So, for simplicity, we consider a circuit that contains only Hadamard gates.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ┌───┐┌───┐┌───┐┌───┐
-q_0: ┤ H ├┤ H ├┤ H ├┤ H ├
-     └───┘└───┘└───┘└───┘
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ┌───┐┌───┐┌───┐┌───┐
+q: ┤ H ├┤ H ├┤ H ├┤ H ├
+   └───┘└───┘└───┘└───┘
 </pre></div>
 </div>
 </div>
@@ -769,10 +770,10 @@ Here, for simplicity, we import the basic <a class="reference internal" href="..
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">circuit_copy</span> <span class="o">=</span> <span class="n">circuit</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>    
     <span class="n">noise_model</span> <span class="o">=</span> <span class="n">initialized_depolarizing_noise</span><span class="p">(</span><span class="n">BASE_NOISE</span><span class="p">)</span>
-    <span class="n">projector_on_zero</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+    <span class="n">projector_on_zero</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
     <span class="k">return</span> <span class="n">execute_with_noise</span><span class="p">(</span><span class="n">circuit_copy</span><span class="p">,</span> <span class="n">projector_on_zero</span><span class="p">,</span> <span class="n">noise_model</span><span class="p">)</span>
 
-<span class="c1"># Cast the execute function into an Executor class to record the execution histroy</span>
+<span class="c1"># Cast the execute function into an Executor class to record the execution history</span>
 <span class="n">executor</span> <span class="o">=</span> <span class="n">Executor</span><span class="p">(</span><span class="n">execute</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -858,27 +859,27 @@ mitigation technique.</p>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>During the previous PEC process, 130  circuits have been executed.
 The first 5 circuits are:
-     ┌───┐┌───┐┌───┐┌───┐┌───┐
-q_0: ┤ H ├┤ H ├┤ H ├┤ H ├┤ Y ├
-     └───┘└───┘└───┘└───┘└───┘
-     ┌───┐┌───┐┌───┐┌───┐┌───┐
-q_0: ┤ H ├┤ H ├┤ H ├┤ Y ├┤ H ├
-     └───┘└───┘└───┘└───┘└───┘
-     ┌───┐┌───┐┌───┐┌───┐┌───┐┌───┐
-q_0: ┤ H ├┤ H ├┤ Z ├┤ H ├┤ X ├┤ H ├
-     └───┘└───┘└───┘└───┘└───┘└───┘
-     ┌───┐┌───┐┌───┐┌───┐
-q_0: ┤ H ├┤ H ├┤ H ├┤ H ├
-     └───┘└───┘└───┘└───┘
-     ┌───┐┌───┐┌───┐┌───┐┌───┐
-q_0: ┤ H ├┤ H ├┤ H ├┤ H ├┤ X ├
-     └───┘└───┘└───┘└───┘└───┘
+   ┌───┐┌───┐┌───┐┌───┐┌───┐
+q: ┤ H ├┤ H ├┤ H ├┤ H ├┤ Y ├
+   └───┘└───┘└───┘└───┘└───┘
+   ┌───┐┌───┐┌───┐┌───┐┌───┐
+q: ┤ H ├┤ H ├┤ H ├┤ Y ├┤ H ├
+   └───┘└───┘└───┘└───┘└───┘
+   ┌───┐┌───┐┌───┐┌───┐┌───┐
+q: ┤ H ├┤ H ├┤ H ├┤ Z ├┤ H ├
+   └───┘└───┘└───┘└───┘└───┘
+   ┌───┐┌───┐┌───┐┌───┐
+q: ┤ H ├┤ H ├┤ H ├┤ H ├
+   └───┘└───┘└───┘└───┘
+   ┌───┐┌───┐┌───┐┌───┐┌───┐
+q: ┤ H ├┤ H ├┤ H ├┤ H ├┤ Z ├
+   └───┘└───┘└───┘└───┘└───┘
 The corresponding noisy expectation values are:
 0.33615999999999974
 0.3361599999999998
-0.6310719999999995
+0.3361599999999998
 0.7047999999999993
-0.33615999999999974
+0.6638399999999994
 </pre></div>
 </div>
 </div>
@@ -921,11 +922,11 @@ For example, the first 5 unbiased samples are:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-1.9176570667226625,
- -1.917657066722663,
- 3.6000109483900644,
- 4.020599418806914,
- -1.9176570667226625]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-1.917657066722669,
+ -1.9176570667226691,
+ -1.9176570667226691,
+ 4.020599418806928,
+ -3.7869391574642326]
 </pre></div>
 </div>
 </div>
@@ -940,7 +941,7 @@ the standard deviation of the unbiased samples, i.e., the square root of the mea
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.27400922104487674
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.27214293718460675
 </pre></div>
 </div>
 </div>
