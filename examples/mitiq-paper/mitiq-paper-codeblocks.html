@@ -281,22 +281,18 @@ Mitiq Version:	0.14.0dev
 
 Core Dependencies
 -----------------
-Cirq Version:	0.13.1
+Cirq Version:	0.14.0
 NumPy Version:	1.20.3
 SciPy Version:	1.7.3
 
 Optional Dependencies
 ---------------------
 PyQuil Version:	3.0.1
-Qiskit Version:	0.32.1
+Qiskit Version:	0.34.2
 Braket Version:	1.17.0
 
 Python Version:	3.8.12
 Platform Info:	Linux (x86_64)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/qiskit/aqua/__init__.py:86: DeprecationWarning: The package qiskit.aqua is deprecated. It was moved/refactored to qiskit-terra For more information see &lt;https://github.com/Qiskit/qiskit-aqua/blob/main/README.md#migration-guide&gt;
-  warn_package(&#39;aqua&#39;, &#39;qiskit-terra&#39;)
 </pre></div>
 </div>
 </div>
@@ -390,7 +386,7 @@ Platform Info:	Linux (x86_64)
 0: ───X─── = 1.010*(0: ───X───)-0.003*(0: ───X───X───)-0.003*(0: ───X───Y───)-0.003*(0: ───X───Z───)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PEC value: 0.6895243825608051
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PEC value: 0.5548391299496325
 </pre></div>
 </div>
 </div>
@@ -491,7 +487,7 @@ Platform Info:	Linux (x86_64)
 0: ───X^0.6───Z^0.8───
 
 Scaled circuit:
-0: ───X^(6/11)───Z^0.739───
+0: ───X^0.576───Z^0.798───
 </pre></div>
 </div>
 </div>
@@ -668,13 +664,13 @@ Scaled circuit:
         cirq.Z(cirq.LineQubit(0)),
     ),
     cirq.Moment(
+        cirq.Z(cirq.LineQubit(0)),
+    ),
+    cirq.Moment(
         cirq.X(cirq.LineQubit(0)),
     ),
     cirq.Moment(
-        cirq.Z(cirq.LineQubit(0)),
-    ),
-    cirq.Moment(
-        cirq.Z(cirq.LineQubit(0)),
+        cirq.X(cirq.LineQubit(0)),
     ),
     cirq.Moment(
         cirq.Z(cirq.LineQubit(0)),
@@ -744,7 +740,7 @@ Scaled circuit:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ZNE then PEC value: -0.5000000668528947
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ZNE then PEC value: -0.2000000280176148
 </pre></div>
 </div>
 </div>
@@ -803,7 +799,7 @@ c0: 2/═══════════╩══╩═
                  0  1 
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.4833984375
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.4990234375
 </pre></div>
 </div>
 </div>
