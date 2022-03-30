@@ -281,7 +281,7 @@ Mitiq Version:	0.14.0dev
 
 Core Dependencies
 -----------------
-Cirq Version:	0.13.1
+Cirq Version:	0.14.0
 NumPy Version:	1.20.3
 SciPy Version:	1.7.3
 
@@ -390,7 +390,7 @@ Platform Info:	Linux (x86_64)
 0: ───X─── = 1.010*(0: ───X───)-0.003*(0: ───X───X───)-0.003*(0: ───X───Y───)-0.003*(0: ───X───Z───)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PEC value: 1.3740240731773443
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PEC value: 0.9627865122243705
 </pre></div>
 </div>
 </div>
@@ -491,7 +491,7 @@ Platform Info:	Linux (x86_64)
 0: ───X^0.6───Z^0.8───
 
 Scaled circuit:
-0: ───X^0.569───Z^0.78───
+0: ───X^0.611───Z^(9/11)───
 </pre></div>
 </div>
 </div>
@@ -665,16 +665,16 @@ Scaled circuit:
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sampled circuit:
 [cirq.Circuit([
     cirq.Moment(
-        cirq.Z(cirq.LineQubit(0)),
-    ),
-    cirq.Moment(
-        cirq.Z(cirq.LineQubit(0)),
+        cirq.X(cirq.LineQubit(0)),
     ),
     cirq.Moment(
         cirq.Z(cirq.LineQubit(0)),
     ),
     cirq.Moment(
         cirq.X(cirq.LineQubit(0)),
+    ),
+    cirq.Moment(
+        cirq.Z(cirq.LineQubit(0)),
     ),
     cirq.Moment(
         cirq.Z(cirq.LineQubit(0)),
@@ -744,7 +744,7 @@ Scaled circuit:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ZNE then PEC value: -0.8000001056881745
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ZNE then PEC value: -0.30000004096270805
 </pre></div>
 </div>
 </div>
@@ -803,7 +803,7 @@ c0: 2/═══════════╩══╩═
                  0  1 
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.4931640625
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.509765625
 </pre></div>
 </div>
 </div>

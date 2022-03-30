@@ -589,7 +589,7 @@ in the basis of the noisy implementable gates (<code class="docutils literal not
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimal representation:
-q_0: ───H─── = -0.091*(q_0: ───H───X───)+1.273*(q_0: ───H───)-0.091*(q_0: ───H───Z───)-0.091*(q_0: ───H───Y───)
+q_0: ───H─── = 1.273*(q_0: ───H───)-0.091*(q_0: ───H───Z───)-0.091*(q_0: ───H───X───)-0.091*(q_0: ───H───Y───)
 </pre></div>
 </div>
 </div>
@@ -682,7 +682,7 @@ The associated coefficient is 1.27273, whose sign is 1.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.5454545145454555
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.545454514545455
 </pre></div>
 </div>
 </div>
@@ -696,7 +696,7 @@ The associated coefficient is 1.27273, whose sign is 1.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-0.09090908909090978, 1.272727247272726, -0.09090908909091022, -0.09090908909090978)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1.2727272472727287, -0.09090908909090933, -0.09090908909090833, -0.09090908909090889)
 </pre></div>
 </div>
 </div>
@@ -709,7 +709,7 @@ The associated coefficient is 1.27273, whose sign is 1.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.05882353, 0.82352941, 0.05882353, 0.05882353])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.82352941, 0.05882353, 0.05882353, 0.05882353])
 </pre></div>
 </div>
 </div>
@@ -864,21 +864,21 @@ q_0: ┤ H ├┤ H ├┤ H ├┤ H ├
      ┌───┐┌───┐┌───┐┌───┐
 q_0: ┤ H ├┤ H ├┤ H ├┤ H ├
      └───┘└───┘└───┘└───┘
-     ┌───┐┌───┐┌───┐┌───┐┌───┐
-q_0: ┤ H ├┤ H ├┤ H ├┤ X ├┤ H ├
-     └───┘└───┘└───┘└───┘└───┘
-     ┌───┐┌───┐┌───┐┌───┐┌───┐
-q_0: ┤ H ├┤ H ├┤ H ├┤ Z ├┤ H ├
-     └───┘└───┘└───┘└───┘└───┘
-     ┌───┐┌───┐┌───┐┌───┐┌───┐
-q_0: ┤ H ├┤ H ├┤ H ├┤ H ├┤ X ├
-     └───┘└───┘└───┘└───┘└───┘
+     ┌───┐┌───┐┌───┐┌───┐
+q_0: ┤ H ├┤ H ├┤ H ├┤ H ├
+     └───┘└───┘└───┘└───┘
+     ┌───┐┌───┐┌───┐┌───┐┌───┐┌───┐
+q_0: ┤ H ├┤ H ├┤ H ├┤ X ├┤ H ├┤ Z ├
+     └───┘└───┘└───┘└───┘└───┘└───┘
+     ┌───┐┌───┐┌───┐┌───┐
+q_0: ┤ H ├┤ H ├┤ H ├┤ H ├
+     └───┘└───┘└───┘└───┘
 The corresponding noisy expectation values are:
 0.7047999999999993
 0.7047999999999993
-0.6638399999999994
-0.3361599999999998
-0.33615999999999974
+0.7047999999999993
+0.6310719999999995
+0.7047999999999993
 </pre></div>
 </div>
 </div>
@@ -921,11 +921,11 @@ For example, the first 5 unbiased samples are:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4.020599418806923,
- 4.020599418806923,
- -3.786939157464228,
- -1.9176570667226671,
- -1.9176570667226667]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4.020599418806919,
+ 4.020599418806919,
+ 4.020599418806919,
+ 3.6000109483900684,
+ 4.020599418806919]
 </pre></div>
 </div>
 </div>
@@ -940,7 +940,7 @@ the standard deviation of the unbiased samples, i.e., the square root of the mea
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2733203798182113
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2814651338079106
 </pre></div>
 </div>
 </div>
