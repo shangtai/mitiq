@@ -423,9 +423,9 @@ In particular, it could be useful to explicitly split the PEC process into the t
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ┌───┐┌───┐┌───┐┌──────────┐┌──────────┐┌───────┐
-q_0: ┤ Y ├┤ X ├┤ X ├┤ Ry(-π/2) ├┤ Ry(-π/2) ├┤ Rx(0) ├
-     └───┘└───┘└───┘└──────────┘└──────────┘└───────┘
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ┌────┐┌─────────┐┌────┐┌──────────┐┌──────────┐┌──────────┐
+q: ┤ √X ├┤ Ry(π/2) ├┤ √X ├┤ Ry(-π/2) ├┤ Rx(-π/2) ├┤ Ry(-π/2) ├
+   └────┘└─────────┘└────┘└──────────┘└──────────┘└──────────┘
 </pre></div>
 </div>
 </div>
@@ -462,7 +462,7 @@ as we did in <a class="reference internal" href="pec-1-intro.html"><span class="
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>q_0: ───X─── = 1.010*(q_0: ───X───)-0.003*(q_0: ───X───X───)-0.003*(q_0: ───X───Y───)-0.003*(q_0: ───X───Z───)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>q_0: ───X^0.5─── = 1.010*(q_0: ───X^0.5───)-0.003*(q_0: ───X^0.5───X───)-0.003*(q_0: ───X^0.5───Y───)-0.003*(q_0: ───X^0.5───Z───)
 </pre></div>
 </div>
 </div>
@@ -496,21 +496,21 @@ the elements of <code class="docutils literal notranslate"><span class="pre">gat
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ┌───┐┌───┐┌───┐┌──────────┐┌──────────┐┌───────┐
-q_0: ┤ Y ├┤ X ├┤ X ├┤ Ry(-π/2) ├┤ Ry(-π/2) ├┤ Rx(0) ├
-     └───┘└───┘└───┘└──────────┘└──────────┘└───────┘
-     ┌───┐┌───┐┌───┐┌───┐┌──────────┐┌──────────┐┌───────┐
-q_0: ┤ Y ├┤ X ├┤ X ├┤ X ├┤ Ry(-π/2) ├┤ Ry(-π/2) ├┤ Rx(0) ├
-     └───┘└───┘└───┘└───┘└──────────┘└──────────┘└───────┘
-     ┌───┐┌───┐┌───┐┌──────────┐┌───┐┌──────────┐┌───────┐
-q_0: ┤ Y ├┤ X ├┤ X ├┤ Ry(-π/2) ├┤ Y ├┤ Ry(-π/2) ├┤ Rx(0) ├
-     └───┘└───┘└───┘└──────────┘└───┘└──────────┘└───────┘
-     ┌───┐┌───┐┌───┐┌──────────┐┌──────────┐┌───────┐
-q_0: ┤ Y ├┤ X ├┤ X ├┤ Ry(-π/2) ├┤ Ry(-π/2) ├┤ Rx(0) ├
-     └───┘└───┘└───┘└──────────┘└──────────┘└───────┘
-     ┌───┐┌───┐┌───┐┌──────────┐┌──────────┐┌───────┐
-q_0: ┤ Y ├┤ X ├┤ X ├┤ Ry(-π/2) ├┤ Ry(-π/2) ├┤ Rx(0) ├
-     └───┘└───┘└───┘└──────────┘└──────────┘└───────┘
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ┌────┐┌─────────┐┌────┐┌──────────┐┌──────────┐┌──────────┐
+q: ┤ √X ├┤ Ry(π/2) ├┤ √X ├┤ Ry(-π/2) ├┤ Rx(-π/2) ├┤ Ry(-π/2) ├
+   └────┘└─────────┘└────┘└──────────┘└──────────┘└──────────┘
+   ┌────┐┌─────────┐┌───┐┌────┐┌──────────┐┌──────────┐┌──────────┐
+q: ┤ √X ├┤ Ry(π/2) ├┤ X ├┤ √X ├┤ Ry(-π/2) ├┤ Rx(-π/2) ├┤ Ry(-π/2) ├
+   └────┘└─────────┘└───┘└────┘└──────────┘└──────────┘└──────────┘
+   ┌────┐┌─────────┐┌────┐┌──────────┐┌───┐┌──────────┐┌──────────┐
+q: ┤ √X ├┤ Ry(π/2) ├┤ √X ├┤ Ry(-π/2) ├┤ Y ├┤ Rx(-π/2) ├┤ Ry(-π/2) ├
+   └────┘└─────────┘└────┘└──────────┘└───┘└──────────┘└──────────┘
+   ┌────┐┌─────────┐┌────┐┌──────────┐┌──────────┐┌──────────┐
+q: ┤ √X ├┤ Ry(π/2) ├┤ √X ├┤ Ry(-π/2) ├┤ Rx(-π/2) ├┤ Ry(-π/2) ├
+   └────┘└─────────┘└────┘└──────────┘└──────────┘└──────────┘
+   ┌────┐┌─────────┐┌────┐┌──────────┐┌──────────┐┌──────────┐
+q: ┤ √X ├┤ Ry(π/2) ├┤ √X ├┤ Ry(-π/2) ├┤ Rx(-π/2) ├┤ Ry(-π/2) ├
+   └────┘└─────────┘└────┘└──────────┘└──────────┘└──────────┘
 Signs: [1, -1, -1, 1, 1]
 One-norm: 1.1279540069959801
 </pre></div>
@@ -589,15 +589,16 @@ circuits as input and returns a list of expectation values. More details on batc
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.9613097,
- 0.955159,
- 0.044840932,
- 0.955159,
- 0.044840932,
- 0.044840932,
- 0.044840932,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.9613096,
+ 0.04484092,
+ 0.95515895,
+ 0.044841006,
+ 0.044841006,
  0.9551589,
- 0.044840932]
+ 0.9551589,
+ 0.050909746,
+ 0.9551588,
+ 0.044841006]
 </pre></div>
 </div>
 </div>
@@ -613,7 +614,7 @@ independence of the quantum results.</em></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 noisy expectation values efficiently evaluated by executing only 9 unique circuits.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 noisy expectation values efficiently evaluated by executing only 10 unique circuits.
 </pre></div>
 </div>
 </div>
@@ -652,8 +653,8 @@ the noisy auxiliary expectation values, after scaling them by the corresponding 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Expectation value without error mitigation:    0.9613096714019775
-Expectation value with error mitigation (PEC): 1.0018985932089515
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Expectation value without error mitigation:    0.9613096117973328
+Expectation value with error mitigation (PEC): 1.0075725261556512
 </pre></div>
 </div>
 </div>
