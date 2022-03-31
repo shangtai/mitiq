@@ -590,7 +590,7 @@ in the basis of the noisy implementable gates (<code class="docutils literal not
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimal representation:
-q_0: ───H─── = -0.091*(q_0: ───H───Z───)-0.091*(q_0: ───H───Y───)+1.273*(q_0: ───H───)-0.091*(q_0: ───H───X───)
+q_0: ───H─── = -0.091*(q_0: ───H───X───)-0.091*(q_0: ───H───Z───)-0.091*(q_0: ───H───Y───)+1.273*(q_0: ───H───)
 </pre></div>
 </div>
 </div>
@@ -683,7 +683,7 @@ The associated coefficient is 1.27273, whose sign is 1.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.545454514545456
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.5454545145454561
 </pre></div>
 </div>
 </div>
@@ -697,7 +697,7 @@ The associated coefficient is 1.27273, whose sign is 1.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-0.09090908909090889, -0.09090908909090911, 1.2727272472727287, -0.09090908909090933)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-0.09090908909090978, -0.09090908909091022, -0.09090908909090967, 1.2727272472727265)
 </pre></div>
 </div>
 </div>
@@ -710,7 +710,7 @@ The associated coefficient is 1.27273, whose sign is 1.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.05882353, 0.05882353, 0.82352941, 0.05882353])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.05882353, 0.05882353, 0.05882353, 0.82352941])
 </pre></div>
 </div>
 </div>
@@ -860,26 +860,26 @@ mitigation technique.</p>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>During the previous PEC process, 130  circuits have been executed.
 The first 5 circuits are:
    ┌───┐┌───┐┌───┐┌───┐┌───┐
-q: ┤ H ├┤ H ├┤ H ├┤ H ├┤ Y ├
-   └───┘└───┘└───┘└───┘└───┘
-   ┌───┐┌───┐┌───┐┌───┐┌───┐
-q: ┤ H ├┤ H ├┤ H ├┤ Y ├┤ H ├
+q: ┤ H ├┤ H ├┤ H ├┤ H ├┤ Z ├
    └───┘└───┘└───┘└───┘└───┘
    ┌───┐┌───┐┌───┐┌───┐┌───┐
 q: ┤ H ├┤ H ├┤ H ├┤ Z ├┤ H ├
    └───┘└───┘└───┘└───┘└───┘
+   ┌───┐┌───┐┌───┐┌───┐┌───┐┌───┐
+q: ┤ H ├┤ H ├┤ Y ├┤ H ├┤ X ├┤ H ├
+   └───┘└───┘└───┘└───┘└───┘└───┘
    ┌───┐┌───┐┌───┐┌───┐
 q: ┤ H ├┤ H ├┤ H ├┤ H ├
    └───┘└───┘└───┘└───┘
    ┌───┐┌───┐┌───┐┌───┐┌───┐
-q: ┤ H ├┤ H ├┤ H ├┤ H ├┤ Z ├
+q: ┤ H ├┤ H ├┤ H ├┤ H ├┤ X ├
    └───┘└───┘└───┘└───┘└───┘
 The corresponding noisy expectation values are:
-0.33615999999999974
-0.3361599999999998
-0.3361599999999998
-0.7047999999999993
 0.6638399999999994
+0.3361599999999998
+0.3689279999999997
+0.7047999999999993
+0.33615999999999974
 </pre></div>
 </div>
 </div>
@@ -922,11 +922,11 @@ For example, the first 5 unbiased samples are:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-1.917657066722669,
- -1.9176570667226691,
- -1.9176570667226691,
- 4.020599418806928,
- -3.7869391574642326]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-3.786939157464235,
+ -1.9176570667226702,
+ 2.1045852757968264,
+ 4.02059941880693,
+ -1.91765706672267]
 </pre></div>
 </div>
 </div>
@@ -941,7 +941,7 @@ the standard deviation of the unbiased samples, i.e., the square root of the mea
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.27214293718460675
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2804498835709715
 </pre></div>
 </div>
 </div>
