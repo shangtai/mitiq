@@ -332,6 +332,16 @@ in the top right corner -->
                 <span class="k">for</span> <span class="n">circuit_with_measurements</span> <span class="ow">in</span> <span class="n">observable</span><span class="o">.</span><span class="n">measure_in</span><span class="p">(</span><span class="n">circuit</span><span class="p">)</span>
             <span class="p">]</span>
             <span class="n">result_step</span> <span class="o">=</span> <span class="n">observable</span><span class="o">.</span><span class="n">ngroups</span>
+        <span class="k">elif</span> <span class="p">(</span>
+            <span class="n">observable</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+            <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_executor_return_type</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">MeasurementResultLike</span>
+            <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_executor_return_type</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">DensityMatrixLike</span>
+        <span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sd">&quot;&quot;&quot;Executor and observable are not compatible. Executors</span>
+<span class="sd">                returning expectation values as float must be used with</span>
+<span class="sd">                observable=None&quot;&quot;&quot;</span>
+            <span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">all_circuits</span> <span class="o">=</span> <span class="n">circuits</span>
             <span class="n">result_step</span> <span class="o">=</span> <span class="mi">1</span>
