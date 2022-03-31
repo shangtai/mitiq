@@ -423,9 +423,9 @@ In particular, it could be useful to explicitly split the PEC process into the t
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ┌──────────┐┌──────┐┌─────────┐┌─────────┐┌────┐┌─────────┐┌───┐┌───────┐
-q: ┤ Ry(-π/2) ├┤ √Xdg ├┤ Ry(π/2) ├┤ Ry(π/2) ├┤ √X ├┤ Ry(π/2) ├┤ X ├┤ Ry(0) ├
-   └──────────┘└──────┘└─────────┘└─────────┘└────┘└─────────┘└───┘└───────┘
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ┌──────────┐┌──────┐┌──────────┐┌───────┐┌─────────┐┌────┐┌─────────┐
+q: ┤ Ry(-π/2) ├┤ √Xdg ├┤ Ry(-π/2) ├┤ Rx(0) ├┤ Ry(π/2) ├┤ √X ├┤ Ry(π/2) ├
+   └──────────┘└──────┘└──────────┘└───────┘└─────────┘└────┘└─────────┘
 </pre></div>
 </div>
 </div>
@@ -443,7 +443,7 @@ as we did in <a class="reference internal" href="pec-1-intro.html"><span class="
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6 OperationRepresentation objects produced, assuming 1.00% depolarizing noise.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5 OperationRepresentation objects produced, assuming 1.00% depolarizing noise.
 </pre></div>
 </div>
 </div>
@@ -496,29 +496,23 @@ the elements of <code class="docutils literal notranslate"><span class="pre">gat
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ┌──────────┐┌──────┐┌─────────┐┌─────────┐┌────┐┌─────────┐┌───┐┌───────┐
-q: ┤ Ry(-π/2) ├┤ √Xdg ├┤ Ry(π/2) ├┤ Ry(π/2) ├┤ √X ├┤ Ry(π/2) ├┤ X ├┤ Ry(0) ├
-   └──────────┘└──────┘└─────────┘└─────────┘└────┘└─────────┘└───┘└───────┘
-   ┌──────────┐┌──────┐┌───┐┌─────────┐┌─────────┐┌────┐┌─────────┐┌───┐»
-q: ┤ Ry(-π/2) ├┤ √Xdg ├┤ X ├┤ Ry(π/2) ├┤ Ry(π/2) ├┤ √X ├┤ Ry(π/2) ├┤ X ├»
-   └──────────┘└──────┘└───┘└─────────┘└─────────┘└────┘└─────────┘└───┘»
-«   ┌───────┐
-«q: ┤ Ry(0) ├
-«   └───────┘
-   ┌──────────┐┌──────┐┌─────────┐┌─────────┐┌───┐┌────┐┌─────────┐┌───┐»
-q: ┤ Ry(-π/2) ├┤ √Xdg ├┤ Ry(π/2) ├┤ Ry(π/2) ├┤ Y ├┤ √X ├┤ Ry(π/2) ├┤ X ├»
-   └──────────┘└──────┘└─────────┘└─────────┘└───┘└────┘└─────────┘└───┘»
-«   ┌───────┐
-«q: ┤ Ry(0) ├
-«   └───────┘
-   ┌──────────┐┌──────┐┌─────────┐┌─────────┐┌────┐┌─────────┐┌───┐┌───────┐
-q: ┤ Ry(-π/2) ├┤ √Xdg ├┤ Ry(π/2) ├┤ Ry(π/2) ├┤ √X ├┤ Ry(π/2) ├┤ X ├┤ Ry(0) ├
-   └──────────┘└──────┘└─────────┘└─────────┘└────┘└─────────┘└───┘└───────┘
-   ┌──────────┐┌──────┐┌─────────┐┌─────────┐┌────┐┌─────────┐┌───┐┌───────┐
-q: ┤ Ry(-π/2) ├┤ √Xdg ├┤ Ry(π/2) ├┤ Ry(π/2) ├┤ √X ├┤ Ry(π/2) ├┤ X ├┤ Ry(0) ├
-   └──────────┘└──────┘└─────────┘└─────────┘└────┘└─────────┘└───┘└───────┘
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ┌──────────┐┌──────┐┌──────────┐┌───────┐┌─────────┐┌────┐┌─────────┐
+q: ┤ Ry(-π/2) ├┤ √Xdg ├┤ Ry(-π/2) ├┤ Rx(0) ├┤ Ry(π/2) ├┤ √X ├┤ Ry(π/2) ├
+   └──────────┘└──────┘└──────────┘└───────┘└─────────┘└────┘└─────────┘
+   ┌──────────┐┌──────┐┌───┐┌──────────┐┌───────┐┌─────────┐┌────┐┌─────────┐
+q: ┤ Ry(-π/2) ├┤ √Xdg ├┤ X ├┤ Ry(-π/2) ├┤ Rx(0) ├┤ Ry(π/2) ├┤ √X ├┤ Ry(π/2) ├
+   └──────────┘└──────┘└───┘└──────────┘└───────┘└─────────┘└────┘└─────────┘
+   ┌──────────┐┌──────┐┌──────────┐┌───────┐┌───┐┌─────────┐┌────┐┌─────────┐
+q: ┤ Ry(-π/2) ├┤ √Xdg ├┤ Ry(-π/2) ├┤ Rx(0) ├┤ Y ├┤ Ry(π/2) ├┤ √X ├┤ Ry(π/2) ├
+   └──────────┘└──────┘└──────────┘└───────┘└───┘└─────────┘└────┘└─────────┘
+   ┌──────────┐┌──────┐┌──────────┐┌───────┐┌─────────┐┌────┐┌─────────┐
+q: ┤ Ry(-π/2) ├┤ √Xdg ├┤ Ry(-π/2) ├┤ Rx(0) ├┤ Ry(π/2) ├┤ √X ├┤ Ry(π/2) ├
+   └──────────┘└──────┘└──────────┘└───────┘└─────────┘└────┘└─────────┘
+   ┌──────────┐┌──────┐┌──────────┐┌───────┐┌─────────┐┌────┐┌─────────┐
+q: ┤ Ry(-π/2) ├┤ √Xdg ├┤ Ry(-π/2) ├┤ Rx(0) ├┤ Ry(π/2) ├┤ √X ├┤ Ry(π/2) ├
+   └──────────┘└──────┘└──────────┘└───────┘└─────────┘└────┘└─────────┘
 Signs: [1, -1, -1, 1, 1]
-One-norm: 1.1741453302371863
+One-norm: 1.1508179395702227
 </pre></div>
 </div>
 </div>
@@ -595,18 +589,13 @@ circuits as input and returns a list of expectation values. More details on batc
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.94909006,
- 0.056897625,
- 0.93719417,
- 0.06280565,
- 0.056897625,
- 0.05689766,
- 0.9431022,
- 0.05689766,
- 0.9431021,
- 0.9431021,
- 0.05689766,
- 0.056897625]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.95515895,
+ 0.9490902,
+ 0.05090983,
+ 0.050909795,
+ 0.05090983,
+ 0.050909787,
+ 0.9490902]
 </pre></div>
 </div>
 </div>
@@ -622,7 +611,7 @@ independence of the quantum results.</em></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 noisy expectation values efficiently evaluated by executing only 12 unique circuits.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 noisy expectation values efficiently evaluated by executing only 7 unique circuits.
 </pre></div>
 </div>
 </div>
@@ -661,8 +650,8 @@ the noisy auxiliary expectation values, after scaling them by the corresponding 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Expectation value without error mitigation:    0.9490900635719299
-Expectation value with error mitigation (PEC): 1.029227249344589
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Expectation value without error mitigation:    0.9551589488983154
+Expectation value with error mitigation (PEC): 1.0541435733934477
 </pre></div>
 </div>
 </div>
