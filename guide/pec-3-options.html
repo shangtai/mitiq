@@ -590,7 +590,7 @@ in the basis of the noisy implementable gates (<code class="docutils literal not
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimal representation:
-q_0: ───H─── = -0.091*(q_0: ───H───Z───)+1.273*(q_0: ───H───)-0.091*(q_0: ───H───Y───)-0.091*(q_0: ───H───X───)
+q_0: ───H─── = -0.091*(q_0: ───H───Z───)-0.091*(q_0: ───H───Y───)+1.273*(q_0: ───H───)-0.091*(q_0: ───H───X───)
 </pre></div>
 </div>
 </div>
@@ -667,8 +667,8 @@ should be multiplied by the sign of the associated coefficient <span class="math
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The sampled noisy operation is: q_0: ───H───.
-The associated coefficient is 1.27273, whose sign is 1.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The sampled noisy operation is: q_0: ───H───X───.
+The associated coefficient is -0.0909091, whose sign is -1.
 </pre></div>
 </div>
 </div>
@@ -683,7 +683,7 @@ The associated coefficient is 1.27273, whose sign is 1.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.5454545145454557
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.5454545145454546
 </pre></div>
 </div>
 </div>
@@ -697,7 +697,7 @@ The associated coefficient is 1.27273, whose sign is 1.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-0.09090908909090967, 1.272727247272726, -0.09090908909090989, -0.09090908909091011)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-0.09090908909090833, -0.09090908909090922, 1.2727272472727287, -0.09090908909090833)
 </pre></div>
 </div>
 </div>
@@ -710,7 +710,7 @@ The associated coefficient is 1.27273, whose sign is 1.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.05882353, 0.82352941, 0.05882353, 0.05882353])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.05882353, 0.05882353, 0.82352941, 0.05882353])
 </pre></div>
 </div>
 </div>
@@ -859,26 +859,26 @@ mitigation technique.</p>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>During the previous PEC process, 130  circuits have been executed.
 The first 5 circuits are:
-   ┌───┐┌───┐┌───┐┌───┐
-q: ┤ H ├┤ H ├┤ H ├┤ H ├
-   └───┘└───┘└───┘└───┘
-   ┌───┐┌───┐┌───┐┌───┐
-q: ┤ H ├┤ H ├┤ H ├┤ H ├
-   └───┘└───┘└───┘└───┘
    ┌───┐┌───┐┌───┐┌───┐┌───┐
-q: ┤ H ├┤ H ├┤ H ├┤ Z ├┤ H ├
+q: ┤ H ├┤ H ├┤ H ├┤ H ├┤ Y ├
    └───┘└───┘└───┘└───┘└───┘
    ┌───┐┌───┐┌───┐┌───┐┌───┐
 q: ┤ H ├┤ H ├┤ H ├┤ Y ├┤ H ├
    └───┘└───┘└───┘└───┘└───┘
    ┌───┐┌───┐┌───┐┌───┐┌───┐
+q: ┤ H ├┤ H ├┤ H ├┤ Z ├┤ H ├
+   └───┘└───┘└───┘└───┘└───┘
+   ┌───┐┌───┐┌───┐┌───┐
+q: ┤ H ├┤ H ├┤ H ├┤ H ├
+   └───┘└───┘└───┘└───┘
+   ┌───┐┌───┐┌───┐┌───┐┌───┐
 q: ┤ H ├┤ H ├┤ H ├┤ H ├┤ Z ├
    └───┘└───┘└───┘└───┘└───┘
 The corresponding noisy expectation values are:
-0.7047999999999993
-0.7047999999999993
+0.33615999999999974
 0.3361599999999998
 0.3361599999999998
+0.7047999999999993
 0.6638399999999994
 </pre></div>
 </div>
@@ -922,11 +922,11 @@ For example, the first 5 unbiased samples are:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4.020599418806926,
- 4.020599418806926,
- -1.9176570667226682,
- -1.9176570667226682,
- -3.786939157464231]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-1.9176570667226625,
+ -1.917657066722663,
+ -1.917657066722663,
+ 4.020599418806914,
+ -3.78693915746422]
 </pre></div>
 </div>
 </div>
@@ -941,7 +941,7 @@ the standard deviation of the unbiased samples, i.e., the square root of the mea
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.26533879253667786
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2721429371846058
 </pre></div>
 </div>
 </div>

@@ -423,9 +423,9 @@ In particular, it could be useful to explicitly split the PEC process into the t
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ┌─────────┐┌───────┐┌─────────┐┌───────┐┌───┐┌───────┐
-q: ┤ Ry(π/2) ├┤ Rx(0) ├┤ Ry(π/2) ├┤ Rx(0) ├┤ Y ├┤ Rx(0) ├
-   └─────────┘└───────┘└─────────┘└───────┘└───┘└───────┘
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ┌──────────┐┌──────┐┌─────────┐┌─────────┐┌────┐┌─────────┐┌───┐┌───────┐
+q: ┤ Ry(-π/2) ├┤ √Xdg ├┤ Ry(π/2) ├┤ Ry(π/2) ├┤ √X ├┤ Ry(π/2) ├┤ X ├┤ Ry(0) ├
+   └──────────┘└──────┘└─────────┘└─────────┘└────┘└─────────┘└───┘└───────┘
 </pre></div>
 </div>
 </div>
@@ -443,7 +443,7 @@ as we did in <a class="reference internal" href="pec-1-intro.html"><span class="
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3 OperationRepresentation objects produced, assuming 1.00% depolarizing noise.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6 OperationRepresentation objects produced, assuming 1.00% depolarizing noise.
 </pre></div>
 </div>
 </div>
@@ -462,7 +462,7 @@ as we did in <a class="reference internal" href="pec-1-intro.html"><span class="
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>q_0: ───Y─── = 1.010*(q_0: ───Y───)-0.003*(q_0: ───Y───X───)-0.003*(q_0: ───Y───Y───)-0.003*(q_0: ───Y───Z───)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>q_0: ───X^-0.5─── = 1.010*(q_0: ───X^-0.5───)-0.003*(q_0: ───X^-0.5───X───)-0.003*(q_0: ───X^-0.5───Y───)-0.003*(q_0: ───X^-0.5───Z───)
 </pre></div>
 </div>
 </div>
@@ -496,23 +496,29 @@ the elements of <code class="docutils literal notranslate"><span class="pre">gat
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ┌─────────┐┌───────┐┌─────────┐┌───────┐┌───┐┌───────┐
-q: ┤ Ry(π/2) ├┤ Rx(0) ├┤ Ry(π/2) ├┤ Rx(0) ├┤ Y ├┤ Rx(0) ├
-   └─────────┘└───────┘└─────────┘└───────┘└───┘└───────┘
-   ┌─────────┐┌───────┐┌───┐┌─────────┐┌───────┐┌───┐┌───────┐
-q: ┤ Ry(π/2) ├┤ Rx(0) ├┤ X ├┤ Ry(π/2) ├┤ Rx(0) ├┤ Y ├┤ Rx(0) ├
-   └─────────┘└───────┘└───┘└─────────┘└───────┘└───┘└───────┘
-   ┌─────────┐┌───────┐┌─────────┐┌───────┐┌───┐┌───┐┌───────┐
-q: ┤ Ry(π/2) ├┤ Rx(0) ├┤ Ry(π/2) ├┤ Rx(0) ├┤ Y ├┤ Y ├┤ Rx(0) ├
-   └─────────┘└───────┘└─────────┘└───────┘└───┘└───┘└───────┘
-   ┌─────────┐┌───────┐┌─────────┐┌───────┐┌───┐┌───────┐
-q: ┤ Ry(π/2) ├┤ Rx(0) ├┤ Ry(π/2) ├┤ Rx(0) ├┤ Y ├┤ Rx(0) ├
-   └─────────┘└───────┘└─────────┘└───────┘└───┘└───────┘
-   ┌─────────┐┌───────┐┌─────────┐┌───────┐┌───┐┌───────┐
-q: ┤ Ry(π/2) ├┤ Rx(0) ├┤ Ry(π/2) ├┤ Rx(0) ├┤ Y ├┤ Rx(0) ├
-   └─────────┘└───────┘└─────────┘└───────┘└───┘└───────┘
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ┌──────────┐┌──────┐┌─────────┐┌─────────┐┌────┐┌─────────┐┌───┐┌───────┐
+q: ┤ Ry(-π/2) ├┤ √Xdg ├┤ Ry(π/2) ├┤ Ry(π/2) ├┤ √X ├┤ Ry(π/2) ├┤ X ├┤ Ry(0) ├
+   └──────────┘└──────┘└─────────┘└─────────┘└────┘└─────────┘└───┘└───────┘
+   ┌──────────┐┌──────┐┌───┐┌─────────┐┌─────────┐┌────┐┌─────────┐┌───┐»
+q: ┤ Ry(-π/2) ├┤ √Xdg ├┤ X ├┤ Ry(π/2) ├┤ Ry(π/2) ├┤ √X ├┤ Ry(π/2) ├┤ X ├»
+   └──────────┘└──────┘└───┘└─────────┘└─────────┘└────┘└─────────┘└───┘»
+«   ┌───────┐
+«q: ┤ Ry(0) ├
+«   └───────┘
+   ┌──────────┐┌──────┐┌─────────┐┌─────────┐┌───┐┌────┐┌─────────┐┌───┐»
+q: ┤ Ry(-π/2) ├┤ √Xdg ├┤ Ry(π/2) ├┤ Ry(π/2) ├┤ Y ├┤ √X ├┤ Ry(π/2) ├┤ X ├»
+   └──────────┘└──────┘└─────────┘└─────────┘└───┘└────┘└─────────┘└───┘»
+«   ┌───────┐
+«q: ┤ Ry(0) ├
+«   └───────┘
+   ┌──────────┐┌──────┐┌─────────┐┌─────────┐┌────┐┌─────────┐┌───┐┌───────┐
+q: ┤ Ry(-π/2) ├┤ √Xdg ├┤ Ry(π/2) ├┤ Ry(π/2) ├┤ √X ├┤ Ry(π/2) ├┤ X ├┤ Ry(0) ├
+   └──────────┘└──────┘└─────────┘└─────────┘└────┘└─────────┘└───┘└───────┘
+   ┌──────────┐┌──────┐┌─────────┐┌─────────┐┌────┐┌─────────┐┌───┐┌───────┐
+q: ┤ Ry(-π/2) ├┤ √Xdg ├┤ Ry(π/2) ├┤ Ry(π/2) ├┤ √X ├┤ Ry(π/2) ├┤ X ├┤ Ry(0) ├
+   └──────────┘└──────┘└─────────┘└─────────┘└────┘└─────────┘└───┘└───────┘
 Signs: [1, -1, -1, 1, 1]
-One-norm: 1.1279540069959801
+One-norm: 1.1741453302371863
 </pre></div>
 </div>
 </div>
@@ -589,18 +595,18 @@ circuits as input and returns a list of expectation values. More details on batc
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.9613098,
- 0.044840906,
- 0.044840906,
- 0.044840906,
- 0.955159,
- 0.95515895,
- 0.95515895,
- 0.044840906,
- 0.0448409,
- 0.044840906,
- 0.955159,
- 0.955159]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.94909006,
+ 0.056897625,
+ 0.93719417,
+ 0.06280565,
+ 0.056897625,
+ 0.05689766,
+ 0.9431022,
+ 0.05689766,
+ 0.9431021,
+ 0.9431021,
+ 0.05689766,
+ 0.056897625]
 </pre></div>
 </div>
 </div>
@@ -655,8 +661,8 @@ the noisy auxiliary expectation values, after scaling them by the corresponding 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Expectation value without error mitigation:    0.9613097906112671
-Expectation value with error mitigation (PEC): 0.9797413616589554
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Expectation value without error mitigation:    0.9490900635719299
+Expectation value with error mitigation (PEC): 1.029227249344589
 </pre></div>
 </div>
 </div>
