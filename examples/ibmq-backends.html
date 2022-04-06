@@ -8,7 +8,7 @@ in the top right corner -->
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Error mitigation on IBMQ backends &#8212; Mitiq 0.14.0dev documentation</title>
+    <title>Error mitigation on IBMQ backends &#8212; Mitiq 0.14.0 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -309,12 +309,6 @@ backends, broken down in the following steps.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/_distutils_hack/__init__.py:30: UserWarning: Setuptools is replacing distutils.
-  warnings.warn(&quot;Setuptools is replacing distutils.&quot;)
-</pre></div>
-</div>
-</div>
 </div>
 <p><strong>Note:</strong> If <code class="docutils literal notranslate"><span class="pre">USE_REAL_HARDWARE</span></code> is set to <code class="docutils literal notranslate"><span class="pre">False</span></code>, a classically simulated noisy backend is used instead of a real quantum computer.</p>
 <div class="cell docutils container">
@@ -424,8 +418,8 @@ as follows.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Unmitigated result 0.911
-Mitigated result 0.995
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Unmitigated result 0.904
+Mitigated result 1.005
 </pre></div>
 </div>
 </div>
@@ -447,7 +441,7 @@ following code block shows an example of using linear extrapolation with five di
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mitigated result 0.981
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mitigated result 0.972
 </pre></div>
 </div>
 </div>
@@ -464,7 +458,7 @@ scaling noise by folding gates starting from the left (instead of at random, the
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mitigated result 0.995
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mitigated result 1.006
 </pre></div>
 </div>
 </div>
@@ -509,7 +503,7 @@ IBMQ backend.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mitigated result: 1.051
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mitigated result: 1.040
 </pre></div>
 </div>
 </div>
@@ -593,7 +587,7 @@ following code block.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Expectation values:
-[0.8046875, 0.751220703125, 0.6754150390625, 0.6453857421875, 0.5902099609375]
+[0.8060302734375, 0.7451171875, 0.6776123046875, 0.643310546875, 0.6024169921875]
 </pre></div>
 </div>
 </div>
@@ -607,7 +601,7 @@ corresponds to a circuit with scale factor one, i.e., the original circuit.)</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Unmitigated expectation value: 0.805
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Unmitigated expectation value: 0.806
 </pre></div>
 </div>
 </div>
@@ -621,7 +615,7 @@ corresponds to a circuit with scale factor one, i.e., the original circuit.)</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Extrapolated zero-noise value: 1.06
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Extrapolated zero-noise value: 1.033
 </pre></div>
 </div>
 </div>
